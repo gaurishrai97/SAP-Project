@@ -1,4 +1,4 @@
-1.Program Declaration & Data Definitions
+*1.Program Declaration & Data Definitions
 REPORT ZGSR_SALES_ALV.
  
 * Type pools for ALV
@@ -36,7 +36,7 @@ DATA: WA_KNA1    TYPE KNA1.
 
 
 
-2.Selection Screen
+*2.Selection Screen
 
 SELECTION-SCREEN BEGIN OF BLOCK B1 WITH FRAME TITLE TEXT-001.
   SELECT-OPTIONS: S_ERDAT FOR VBAK-ERDAT,
@@ -47,7 +47,7 @@ SELECTION-SCREEN BEGIN OF BLOCK B1 WITH FRAME TITLE TEXT-001.
 SELECTION-SCREEN END OF BLOCK B1.
 
 
-3.Data Retrieval Logic
+*3.Data Retrieval Logic
 START-OF-SELECTION.
   SELECT * FROM VBAK
     INTO TABLE IT_VBAK
@@ -95,7 +95,7 @@ START-OF-SELECTION.
     ENDLOOP.
   ENDLOOP.
 
-4.Field Catalog + Layout
+*4.Field Catalog + Layout
 
 DATA: IT_FIELDCAT TYPE LVC_T_FCAT,
       WA_FIELDCAT TYPE LVC_S_FCAT,
@@ -132,7 +132,7 @@ FORM BUILD_LAYOUT.
 ENDFORM.
 
 
-5.ALV Grid Display
+*5.ALV Grid Display
 DATA: GO_CONTAINER TYPE REF TO CL_GUI_CUSTOM_CONTAINER,
       GO_GRID      TYPE REF TO CL_GUI_ALV_GRID.
  
